@@ -15,6 +15,7 @@ module.exports = {
       },
 
       fontFamily: {
+        assistant: ["Assistant", ...fontFamily.sans],
         sans: ["PT Serif", ...fontFamily.sans],
         mono: ["JetBrains Mono", ...fontFamily.mono],
       },
