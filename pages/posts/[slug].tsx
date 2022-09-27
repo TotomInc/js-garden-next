@@ -38,7 +38,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   }
 
   return (
-    <article className="prose prose-lg prose-invert px-6 py-6 prose-headings:font-assistant prose-h1:text-[32px] prose-h1:font-black prose-pre:px-0 prose-pre:py-0">
+    <article className="prose prose-lg prose-invert px-6 py-6 prose-headings:font-assistant prose-h1:text-[32px] prose-h1:font-black prose-code:text-accent prose-pre:px-0 prose-pre:py-0">
       <Markdown content={post.content} />
     </article>
   );

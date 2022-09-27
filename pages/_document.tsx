@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 const Document = () => {
   return (
-    <Html className="bg-primary font-sans text-secondary antialiased">
+    <Html className="text-secondary bg-background font-sans antialiased">
       <Head />
 
       <body>

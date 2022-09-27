@@ -1,6 +1,6 @@
 .codeStyle {
   margin: 0 !important;
-  background: #2f3044 !important;
+  background: theme("colors.code-background") !important;
 }
 
 .codeStyle > code {

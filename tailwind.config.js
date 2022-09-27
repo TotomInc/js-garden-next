@@ -10,8 +10,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#262738",
-        secondary: "#d4dcff",
+        background: "#262738",
+        "code-background": "#2f3044",
+        accent: "#3dffc5",
       },
 
       fontFamily: {
@@ -19,6 +20,19 @@ module.exports = {
         sans: ["PT Serif", ...fontFamily.sans],
         mono: ["JetBrains Mono", ...fontFamily.mono],
       },
+
+      typography: () => ({
+        lg: {
+          css: {
+            "font-size": "19px",
+          }
+        },
+        invert: {
+          css: {
+            "--tw-prose-invert-body": "#d5d9ee"
+          },
+        },
+      }),
     },
   },
 
