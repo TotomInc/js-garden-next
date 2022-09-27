@@ -1,0 +1,7 @@
+.codeStyle {
+  margin: 0 !important;
+}
+
+.codeStyle > code {
+  font-family: "JetBrains Mono", monospace !important;
+}
