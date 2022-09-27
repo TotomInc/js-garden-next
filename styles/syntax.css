@@ -1,7 +1,9 @@
 .codeStyle {
   margin: 0 !important;
+  background: #2f3044 !important;
 }
 
 .codeStyle > code {
   font-family: "JetBrains Mono", monospace !important;
+  background: transparent !important;
 }
