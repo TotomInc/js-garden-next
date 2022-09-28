@@ -2,6 +2,7 @@ import type { NextPage, GetStaticProps } from "next";
 
 import type { Post } from "../interfaces/posts.interfaces";
 import { getAllPosts } from "../lib/api";
+import { DefaultLayout } from "../components/DefaultLayout";
 import { SEO } from "../components/SEO";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -20,7 +21,12 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home: NextPage<{ posts: Post[] }> = ({ posts }) => {
   console.log("[index] posts:", posts);
 
-  return <SEO />;
+  return (
+    <>
+      <SEO />
+      <DefaultLayout>{null}</DefaultLayout>
+    </>
+  );
 };
 
 export default Home;
