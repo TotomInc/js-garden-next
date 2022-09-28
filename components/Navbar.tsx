@@ -28,12 +28,6 @@ export const Navbar: React.FC = () => {
             </a>
           </Link>
 
-          <Link href="/blog">
-            <a className="font-mono text-sm font-bold text-text sm:text-base">
-              Blog
-            </a>
-          </Link>
-
           <Link href="/spotify">
             <a className="ml-6 flex items-center justify-center">
               <Image
