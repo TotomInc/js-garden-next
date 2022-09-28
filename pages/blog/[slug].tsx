@@ -5,6 +5,7 @@ import ErrorPage from "next/error";
 import type { Post } from "../../interfaces/posts.interfaces";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
 import { DefaultLayout } from "../../components/DefaultLayout";
+import { MarkdownArticleHeader } from "../../components/MarkdownArticleHeader";
 import { MarkdownArticle } from "../../components/MarkdownArticle";
 
 export const getStaticProps: GetStaticProps<
@@ -17,6 +18,8 @@ export const getStaticProps: GetStaticProps<
     "slug",
     "author",
     "content",
+    "summary",
+    "tags",
     "ogImage",
     "coverImage",
   ]);
@@ -34,12 +37,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   const router = useRouter();
 
+  console.log(post);
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
     <DefaultLayout>
+      <MarkdownArticleHeader title={post.title} date={post.date} />
       <MarkdownArticle postContent={post.content} />
     </DefaultLayout>
   );

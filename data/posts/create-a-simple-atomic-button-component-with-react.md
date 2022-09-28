@@ -6,8 +6,6 @@ draft: false
 summary: 'Learn the basics of building low-level, reusable, atomic components with React, TypeScript and TailwindCSS.'
 ---
 
-# Creating a simple atomic button component with React
-
 Let's talk about creating simple and re-usable atomic-level UI components for React.
 
 I like to have low-level UI components that follow a very simple design system.
