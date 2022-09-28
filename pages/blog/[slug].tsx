@@ -5,6 +5,7 @@ import ErrorPage from "next/error";
 import type { Post } from "../../interfaces/posts.interfaces";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
 import { DefaultLayout } from "../../components/DefaultLayout";
+import { SEO } from "../../components/SEO";
 import { MarkdownArticleHeader } from "../../components/MarkdownArticleHeader";
 import { MarkdownArticle } from "../../components/MarkdownArticle";
 
@@ -42,15 +43,19 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   }
 
   return (
-    <DefaultLayout>
-      <MarkdownArticleHeader
-        title={post.title}
-        summary={post.summary}
-        date={post.date}
-      />
+    <>
+      <SEO title={`${post.title} - JS Garden`} description={post.summary} />
 
-      <MarkdownArticle postContent={post.content} />
-    </DefaultLayout>
+      <DefaultLayout>
+        <MarkdownArticleHeader
+          title={post.title}
+          summary={post.summary}
+          date={post.date}
+        />
+
+        <MarkdownArticle postContent={post.content} />
+      </DefaultLayout>
+    </>
   );
 };
 
