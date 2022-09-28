@@ -17,7 +17,7 @@ const authorizationToken = Buffer.from(`${clientId}:${clientSecret}`).toString(
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const PROFILE_ENDPOINT = `https://api.spotify.com/v1/me`;
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks`;
-const TOP_ARTISTS_ENDPOINT = `https://api.spotify.com/v1/me/top/artists?time_range=medium_term`;
+const TOP_ARTISTS_ENDPOINT = `https://api.spotify.com/v1/me/top/artists?time_range=short_term`;
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 
 const getDefaultHeaders = (accessToken: string) => ({

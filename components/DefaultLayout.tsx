@@ -7,7 +7,9 @@ export const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({
     <>
       <Navbar />
 
-      <div className="min-h-screen pt-16">{children}</div>
+      <div className="mx-auto min-h-screen max-w-7xl px-6 pt-16">
+        {children}
+      </div>
     </>
   );
 };
