@@ -8,6 +8,11 @@ const Document = () => {
     >
       <Head>
         <link rel="icon" type="image/png" href="/favicon.png" />
+        <script
+          defer
+          data-domain="blog.totominc.io"
+          src="https://plausible.totominc.io/js/plausible.js"
+        />
       </Head>
 
       <body>
