@@ -1,7 +1,14 @@
+import useSwr from "swr";
+
+import { fetcher } from "../lib/fetcher";
 import { DefaultLayout } from "../components/DefaultLayout";
 import { SEO } from "../components/SEO";
 
 const PostsPage = () => {
+  const { data } = useSwr("/api/spotify/top-tracks", fetcher);
+
+  console.log(data);
+
   return (
     <>
       <SEO
