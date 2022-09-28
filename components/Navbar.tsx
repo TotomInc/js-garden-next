@@ -9,9 +9,15 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-center">
           <Image src="/images/logo.svg" alt="" width={32} height={32} />
 
-          <p className="ml-2 font-assistant text-2xl font-black text-slate-100">
-            JS Garden
-          </p>
+          <div className="ml-2 flex flex-col">
+            <p className="font-assistant text-lg font-black leading-[0.75] text-heading">
+              JS Garden
+            </p>
+
+            <p className="mt-1 font-mono text-[10px] font-medium uppercase leading-none tracking-wider text-text-alt">
+              Thomas Cazade
+            </p>
+          </div>
         </div>
       </div>
     </header>
