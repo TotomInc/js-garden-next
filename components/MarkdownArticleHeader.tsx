@@ -12,7 +12,7 @@ export const MarkdownArticleHeader: React.FC<{
   );
 
   return (
-    <div className="mx-auto w-full max-w-[768px] px-6">
+    <div className="mx-auto w-full max-w-[768px]">
       <h1 className="font-assistant text-4xl font-black text-heading">
         {title}
       </h1>
