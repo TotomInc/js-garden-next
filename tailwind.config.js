@@ -30,7 +30,8 @@ module.exports = {
         },
         invert: {
           css: {
-            "--tw-prose-invert-body": "#d5d9ee"
+            "--tw-prose-invert-body": "#d5d9ee",
+            "--tw-prose-bullets": "#898f9a",
           },
         },
       }),
