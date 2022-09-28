@@ -13,6 +13,9 @@ module.exports = {
         background: "#262738",
         "code-background": "#2f3044",
         accent: "#61f4ef",
+        "heading": "#e4e9f8",
+        text: "#d5d9ee",
+        "text-alt": "#b0bccc",
       },
 
       fontFamily: {

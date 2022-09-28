@@ -37,15 +37,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   const router = useRouter();
 
-  console.log(post);
-
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
     <DefaultLayout>
-      <MarkdownArticleHeader title={post.title} date={post.date} />
+      <MarkdownArticleHeader
+        title={post.title}
+        summary={post.summary}
+        date={post.date}
+      />
+
       <MarkdownArticle postContent={post.content} />
     </DefaultLayout>
   );
