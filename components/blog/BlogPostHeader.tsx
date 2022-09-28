@@ -10,7 +10,7 @@ export const BlogPostHeader: React.FC<{
   tags: string[];
 }> = ({ title, date, slug, summary, tags }) => {
   const formattedDate = formatDate(
-    parseDate(date, "yyyy-dd-MM", new Date()),
+    parseDate(date, "yyyy-MM-dd", new Date()),
     "MMMM d, yyyy"
   );
 

@@ -7,7 +7,7 @@ export const MarkdownArticleHeader: React.FC<{
   date: string;
 }> = ({ title, date, summary }) => {
   const formattedDate = formatDate(
-    parseDate(date, "yyyy-dd-MM", new Date()),
+    parseDate(date, "yyyy-MM-dd", new Date()),
     "MMMM d, yyyy"
   );
 
