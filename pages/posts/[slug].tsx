@@ -4,7 +4,8 @@ import ErrorPage from "next/error";
 
 import type { Post } from "../../interfaces/posts.interfaces";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
-import { Markdown } from "../../components/Markdown";
+import { DefaultLayout } from "../../components/DefaultLayout";
+import { MarkdownArticle } from "../../components/MarkdownArticle";
 
 export const getStaticProps: GetStaticProps<
   { [key: string]: any },
@@ -38,9 +39,9 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   }
 
   return (
-    <article className="prose prose-lg prose-invert px-6 py-6 prose-headings:font-assistant prose-h1:text-[32px] prose-h1:font-black prose-code:text-accent prose-pre:px-0 prose-pre:py-0">
-      <Markdown content={post.content} />
-    </article>
+    <DefaultLayout>
+      <MarkdownArticle postContent={post.content} />
+    </DefaultLayout>
   );
 };
 

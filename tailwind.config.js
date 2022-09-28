@@ -25,6 +25,7 @@ module.exports = {
         lg: {
           css: {
             "font-size": "19px",
+            "line-height": "1.5",
           }
         },
         invert: {
