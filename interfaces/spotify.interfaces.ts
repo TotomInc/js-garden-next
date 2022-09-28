@@ -8,6 +8,7 @@ export type SpotifyArtistResponse = {
   external_urls: { [key: string]: string };
   href: string;
   id: string;
+  images: SpotifyImage[];
   name: string;
   type: "artist";
   uri: string;
@@ -59,10 +60,26 @@ export type SpotifyTopTracksResponse = {
   next: string;
 };
 
+export type SpotifyTopArtistsResponse = {
+  items: SpotifyArtistResponse[];
+  total: number;
+  limit: number;
+  offset: number;
+  href: string;
+  previous: null;
+  next: string;
+};
+
 export type APITopTracksResponse = {
   artist: string;
   songUrl: string;
   title: string;
   image: string;
   album: string;
+};
+
+export type APITopArtistsResponse = {
+  artist: string;
+  image: string;
+  link: string;
 };

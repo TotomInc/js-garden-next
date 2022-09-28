@@ -1,14 +1,23 @@
 import useSwr from "swr";
 
-import type { APITopTracksResponse } from "../interfaces/spotify.interfaces";
+import type {
+  APITopTracksResponse,
+  APITopArtistsResponse,
+} from "../interfaces/spotify.interfaces";
 import { fetcher } from "../lib/fetcher";
 import { DefaultLayout } from "../components/DefaultLayout";
 import { SEO } from "../components/SEO";
 import { SpotifyTopTracks } from "../components/spotify/SpotifyTopTracks";
+import { SpotifyTopArtists } from "../components/spotify/SpotifyTopArtists";
 
 const PostsPage = () => {
-  const { data } = useSwr<{ tracks: APITopTracksResponse[] }>(
+  const { data: topTracksData } = useSwr<{ tracks: APITopTracksResponse[] }>(
     "/api/spotify/top-tracks",
+    fetcher
+  );
+
+  const { data: topArtistsData } = useSwr<{ artists: APITopArtistsResponse[] }>(
+    "/api/spotify/top-artists",
     fetcher
   );
 
@@ -24,7 +33,15 @@ const PostsPage = () => {
           My Spotify Dashboard
         </h1>
 
-        <div>{data ? <SpotifyTopTracks tracks={data.tracks} /> : null}</div>
+        <div className="flex flex-col lg:flex-row">
+          {topTracksData ? (
+            <SpotifyTopTracks tracks={topTracksData.tracks} />
+          ) : null}
+
+          {topArtistsData ? (
+            <SpotifyTopArtists artists={topArtistsData.artists} />
+          ) : null}
+        </div>
       </DefaultLayout>
     </>
   );

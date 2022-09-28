@@ -4,7 +4,7 @@ import { SpotifyTopTrack } from "./SpotifyTopTrack";
 export const SpotifyTopTracks: React.FC<{ tracks: APITopTracksResponse[] }> = ({
   tracks,
 }) => (
-  <div className="mx-auto w-full max-w-lg overflow-x-hidden rounded-md bg-code-background px-8 py-6 shadow-lg">
+  <div className="mx-auto w-full max-w-lg overflow-x-hidden rounded-sm bg-code-background px-8 py-6 shadow-lg">
     <h2 className="font-assistant text-2xl font-bold text-heading">
       Most played tracks
     </h2>
