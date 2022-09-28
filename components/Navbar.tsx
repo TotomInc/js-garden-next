@@ -21,9 +21,21 @@ export const Navbar: React.FC = () => {
           </a>
         </Link>
 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center space-x-6 lg:space-x-12">
+          <Link href="/">
+            <a className="font-mono text-sm font-bold text-text sm:text-base">
+              Home
+            </a>
+          </Link>
+
+          <Link href="/blog">
+            <a className="font-mono text-sm font-bold text-text sm:text-base">
+              Blog
+            </a>
+          </Link>
+
           <Link href="/spotify">
-            <a className="flex items-center justify-center">
+            <a className="ml-6 flex items-center justify-center">
               <Image
                 src="/images/spotify.svg"
                 alt="Spotify"

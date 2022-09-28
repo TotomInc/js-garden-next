@@ -9,6 +9,7 @@ export type Post = {
   coverImage: string;
   excerpt: string;
   content: string;
+  tags: string[];
   ogImage: {
     url: string;
   };
