@@ -12,7 +12,7 @@ module.exports = {
       colors: {
         background: "#262738",
         "code-background": "#2f3044",
-        accent: "#3dffc5",
+        accent: "#61f4ef",
       },
 
       fontFamily: {
