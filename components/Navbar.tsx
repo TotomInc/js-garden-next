@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export const Navbar: React.FC = () => {
   return (
-    <header className="w-full py-4">
-      <div className="mx-auto flex max-w-[93ch]">
+    <header className="fixed top-0 left-0 right-0 w-full bg-background bg-opacity-80 py-4 backdrop-blur-md backdrop-filter">
+      <div className="relative mx-auto flex max-w-[768px] px-6">
         <div />
 
         <div className="flex items-center justify-center">
