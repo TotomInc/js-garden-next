@@ -70,6 +70,38 @@ export type SpotifyTopArtistsResponse = {
   next: string;
 };
 
+export type SpotifyStatusResponse = {
+  timestamp: number;
+  progress_ms: number;
+  currently_playing_type: string;
+  is_playing: boolean;
+  context: {
+    external_urls: { [key: string]: string };
+    href: string;
+    type: string;
+    uri: string;
+  };
+  item: {
+    album: SpotifyAlbumResponse;
+    artists: SpotifyArtistResponse[];
+    available_markets: string[];
+    disc_number: number;
+    duration_ms: number;
+    explicit: boolean;
+    external_ids: { [key: string]: string };
+    external_urls: { [key: string]: string };
+    href: string;
+    id: string;
+    is_local: boolean;
+    name: string;
+    popularity: number;
+    preview_url: string;
+    track_number: number;
+    type: string;
+    uri: string;
+  };
+};
+
 export type APITopTracksResponse = {
   artist: string;
   songUrl: string;
@@ -82,4 +114,13 @@ export type APITopArtistsResponse = {
   artist: string;
   image: string;
   link: string;
+};
+
+export type APINowPlayingResponse = {
+  isPlaying: boolean;
+  title: string;
+  artist: string;
+  album: string;
+  albumImageUrl: string;
+  songUrl: string;
 };

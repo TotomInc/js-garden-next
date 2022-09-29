@@ -4,6 +4,7 @@ import useSwr from "swr";
 import type {
   APITopTracksResponse,
   APITopArtistsResponse,
+  APINowPlayingResponse,
 } from "../interfaces/spotify.interfaces";
 import { fetcher } from "../lib/fetcher";
 import { BlogLayout } from "../layouts/BlogLayout";
@@ -11,6 +12,16 @@ import { SEO } from "../components/SEO";
 import { SpotifyTop } from "../components/spotify/SpotifyTop";
 
 const PostsPage = () => {
+  const nowPlaying = useSwr<{ status: APINowPlayingResponse }>(
+    "/api/spotify/now-playing",
+    fetcher
+  );
+
+  const isOnline =
+    nowPlaying.data &&
+    nowPlaying.data.status &&
+    nowPlaying.data.status.isPlaying;
+
   const tracks = useSwr<{ tracks: APITopTracksResponse[] }>(
     "/api/spotify/top-tracks",
     fetcher
@@ -20,6 +31,8 @@ const PostsPage = () => {
     "/api/spotify/top-artists",
     fetcher
   );
+
+  const fallback = <p className="text-text">Loading...</p>;
 
   return (
     <>
@@ -37,15 +50,36 @@ const PostsPage = () => {
           Curious about what I&apos;ve been listening to recently? The data
           present on this page is pulled from the{" "}
           <span className="text-accent">Spotify API</span> on a{" "}
-          <span className="text-accent">Next.js API Route</span> with serverless
-          functions.
+          <span className="text-accent">Next.js API Route</span> with{" "}
+          <span className="text-accent">serverless functions</span>.
         </p>
+
+        <h2 className="mb-8 font-assistant text-4xl font-extrabold tracking-tight text-white">
+          Currently listening
+        </h2>
+
+        <Suspense fallback={fallback}>
+          <div className="mb-8">
+            {nowPlaying.data && isOnline ? (
+              <SpotifyTop
+                index={1}
+                title={nowPlaying.data.status.title}
+                titleLink={nowPlaying.data.status.songUrl}
+                subtitle={nowPlaying.data.status.artist}
+                imageUrl={nowPlaying.data.status.albumImageUrl}
+                imageAlt={nowPlaying.data.status.album}
+              />
+            ) : (
+              <p className="font-medium text-text-alt">Offline...</p>
+            )}
+          </div>
+        </Suspense>
 
         <h2 className="mb-8 font-assistant text-4xl font-extrabold tracking-tight text-white">
           Top tracks
         </h2>
 
-        <Suspense fallback={<p className="text-text">Loading...</p>}>
+        <Suspense fallback={fallback}>
           <div className="mb-12 flex flex-col space-y-4">
             {tracks.data?.tracks
               ? tracks.data.tracks.map((track, i) => (
@@ -67,7 +101,7 @@ const PostsPage = () => {
           Top artists
         </h2>
 
-        <Suspense fallback={<p className="text-text">Loading...</p>}>
+        <Suspense fallback={fallback}>
           <div className="flex flex-col space-y-4">
             {artists.data?.artists
               ? artists.data.artists.map((artist, i) => (
