@@ -244,9 +244,9 @@ app.mount('#app')
 
 Execute `npm run dev` to run our dev-server.
 
-Go to `localhost:5173` and you should see this :
+Go to `localhost:5173` and you should see this:
 
-![](/vue-3-component-library/vite-sandbox.png)
+![](/images/vue-3-component-library/vite-sandbox.png)
 
 ## Creating our Vue 3 + TypeScript component
 
@@ -353,9 +353,9 @@ import Input from "../src/Input.vue";
 
 Execute `npm run dev` to see our sandbox environment with a preview of our `src/Input.vue` component.
 
-![](/vue-3-component-library/vite-input-preview.png)
+![](/images/vue-3-component-library/vite-input-preview.png)
 
-![](/vue-3-component-library/vite-vue-input-devtools-preview.png)
+![](/images/vue-3-component-library/vite-vue-input-devtools-preview.png)
 
 From this, we'll assume our `Input.vue` is ready for a release.
 

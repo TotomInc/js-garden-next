@@ -210,4 +210,4 @@ npm run dev
 
 You should see the following output after clicking the button:
 
-![](/static/images/electron-process-model/example-output.png)
+![](/images/electron-process-model/example-output.png)
