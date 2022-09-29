@@ -1,6 +1,9 @@
 import Link from "next/link";
 import formatDate from "date-fns/format";
 import parseDate from "date-fns/parse";
+import useSwr from "swr";
+
+import { fetcher } from "../../lib/fetcher";
 
 export const BlogPostHeader: React.FC<{
   title: string;
@@ -9,6 +12,10 @@ export const BlogPostHeader: React.FC<{
   slug: string;
   tags: string[];
 }> = ({ title, date, slug, summary, tags }) => {
+  const { data } = useSwr<{ total: number }>(`/api/views/${slug}`, fetcher);
+
+  const views = data?.total;
+
   const formattedDate = formatDate(
     parseDate(date, "yyyy-MM-dd", new Date()),
     "MMMM d, yyyy"
@@ -28,9 +35,15 @@ export const BlogPostHeader: React.FC<{
         </a>
       </Link>
 
-      <p className="mt-2 font-mono text-xs text-text-alt text-opacity-50">
-        Published {formattedDate}
-      </p>
+      <div className="mt-2 flex items-center justify-between">
+        <p className="font-mono text-xs text-text-alt text-opacity-50">
+          Published {formattedDate}
+        </p>
+
+        <p className="font-mono text-xs text-text-alt text-opacity-50">{`${
+          views ? Number(views).toLocaleString() : "–––"
+        } views`}</p>
+      </div>
 
       <p className="mt-4 font-sans text-base font-normal text-text-alt">
         {summary}

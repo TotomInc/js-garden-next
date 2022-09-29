@@ -51,6 +51,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
           title={post.title}
           summary={post.summary}
           date={post.date}
+          slug={post.slug}
         />
 
         <MarkdownArticle postContent={post.content} />
