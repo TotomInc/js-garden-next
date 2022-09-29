@@ -5,8 +5,8 @@ import "../styles/fonts.css";
 import "../styles/syntax.css";
 import "../styles/scrollbar.css";
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />;
 };
 
-export default MyApp;
+export default App;
