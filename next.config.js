@@ -6,6 +6,9 @@ const nextConfig = {
     // Allow Spotify CDN.
     domains: ['i.scdn.co'],
   },
+  experimental: {
+    legacyBrowsers: false,
+  },
 };
 
 module.exports = nextConfig;
