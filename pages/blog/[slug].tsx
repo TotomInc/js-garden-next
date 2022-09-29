@@ -6,8 +6,8 @@ import type { Post } from "../../interfaces/posts.interfaces";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
 import { BlogLayout } from "../../layouts/BlogLayout";
 import { SEO } from "../../components/SEO";
-import { MarkdownArticleHeader } from "../../components/MarkdownArticleHeader";
-import { MarkdownArticle } from "../../components/MarkdownArticle";
+import { MarkdownArticleHeader } from "../../components/blog/MarkdownArticleHeader";
+import { MarkdownArticle } from "../../components/blog/MarkdownArticle";
 
 export const getStaticProps: GetStaticProps<
   { [key: string]: any },

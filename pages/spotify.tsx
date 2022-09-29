@@ -5,7 +5,7 @@ import type {
   APITopArtistsResponse,
 } from "../interfaces/spotify.interfaces";
 import { fetcher } from "../lib/fetcher";
-import { DefaultLayout } from "../components/DefaultLayout";
+import { DefaultLayout } from "../layouts/DefaultLayout";
 import { SEO } from "../components/SEO";
 import { SpotifyTopTracks } from "../components/spotify/SpotifyTopTracks";
 import { SpotifyTopArtists } from "../components/spotify/SpotifyTopArtists";
