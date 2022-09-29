@@ -19,7 +19,7 @@ const Document = () => {
         />
       </Head>
 
-      <body className="text-secondary bg-background font-sans antialiased">
+      <body className="text-secondary bg-background font-sans">
         <Main />
         <NextScript />
       </body>

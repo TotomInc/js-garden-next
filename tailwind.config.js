@@ -5,6 +5,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./layouts/**/*.{js,ts,jsx,tsx}",
   ],
 
   theme: {
@@ -20,14 +21,14 @@ module.exports = {
 
       fontFamily: {
         assistant: ["Assistant", ...fontFamily.sans],
-        sans: ["PT Serif", ...fontFamily.sans],
+        sans: ["IBM Plex Sans", ...fontFamily.sans],
         mono: ["JetBrains Mono", ...fontFamily.mono],
       },
 
       typography: () => ({
         lg: {
           css: {
-            "font-size": "19px",
+            "font-size": "16px",
             "line-height": "1.5",
           }
         },

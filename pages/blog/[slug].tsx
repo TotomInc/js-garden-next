@@ -4,7 +4,7 @@ import ErrorPage from "next/error";
 
 import type { Post } from "../../interfaces/posts.interfaces";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
-import { DefaultLayout } from "../../components/DefaultLayout";
+import { BlogLayout } from "../../layouts/BlogLayout";
 import { SEO } from "../../components/SEO";
 import { MarkdownArticleHeader } from "../../components/MarkdownArticleHeader";
 import { MarkdownArticle } from "../../components/MarkdownArticle";
@@ -46,7 +46,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
     <>
       <SEO title={`${post.title} - JS Garden`} description={post.summary} />
 
-      <DefaultLayout>
+      <BlogLayout>
         <MarkdownArticleHeader
           title={post.title}
           summary={post.summary}
@@ -54,7 +54,7 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
         />
 
         <MarkdownArticle postContent={post.content} />
-      </DefaultLayout>
+      </BlogLayout>
     </>
   );
 };

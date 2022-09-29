@@ -16,23 +16,23 @@ export const BlogPostHeader: React.FC<{
 
   return (
     <div className="mx-auto w-full max-w-[768px]">
-      <p className="font-mono text-sm font-medium text-accent">
+      <p className="font-mono text-xs text-accent">
         {tags.map((tag) => (
-          <span key={tag} className="mr-2">{`#${tag.toUpperCase()}`}</span>
+          <span key={tag} className="mr-3">{`#${tag.toUpperCase()}`}</span>
         ))}
       </p>
 
       <Link href={`/blog/${slug}`}>
-        <a className="mt-1 font-assistant text-3xl font-black text-heading">
+        <a className="mt-1 font-sans text-3xl font-bold text-heading">
           {title}
         </a>
       </Link>
 
-      <p className="mt-4 font-mono text-sm font-medium text-text-alt">
-        By <b>Thomas Cazade</b>, published {formattedDate}
+      <p className="mt-2 font-mono text-xs text-text-alt text-opacity-50">
+        Published {formattedDate}
       </p>
 
-      <p className="mt-4 font-sans text-lg font-medium text-text-alt">
+      <p className="mt-4 font-sans text-base font-normal text-text-alt">
         {summary}
       </p>
     </div>
