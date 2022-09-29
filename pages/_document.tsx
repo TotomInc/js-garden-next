@@ -10,8 +10,9 @@ const Document = () => {
         <link rel="icon" type="image/png" href="/favicon.png" />
         <script
           defer
+          data-api="/stats/api/event"
           data-domain="blog.totominc.io"
-          src="https://plausible.totominc.io/js/plausible.js"
+          src="https://plausible.totominc.io/js/script.js"
         />
       </Head>
 
