@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
 
           <Link href="/spotify">
             <Image
-              className="ml-6 flex items-center justify-center"
+              className="flex items-center justify-center"
               src="/images/spotify.svg"
               alt="Spotify"
               width={24}
