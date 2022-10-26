@@ -36,14 +36,12 @@ export const SpotifyTop: React.FC<{
       </div>
     </div>
 
-    <div className="relative h-12 w-12">
-      <Image
-        src={imageUrl}
-        alt={imageAlt}
-        width={48}
-        height={48}
-        layout="fill"
-      />
-    </div>
+    <Image
+      src={imageUrl}
+      alt={imageAlt}
+      width={48}
+      height={48}
+      style={{ maxHeight: "48px" }}
+    />
   </div>
 );
