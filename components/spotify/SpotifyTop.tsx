@@ -37,7 +37,13 @@ export const SpotifyTop: React.FC<{
     </div>
 
     <div className="relative h-12 w-12">
-      <Image src={imageUrl} alt={imageAlt} layout="fill" objectFit="cover" />
+      <Image
+        src={imageUrl}
+        alt={imageAlt}
+        width={48}
+        height={48}
+        layout="fill"
+      />
     </div>
   </div>
 );
