@@ -26,10 +26,12 @@ const FooterCategory: React.FC<{
           </a>
         ))
       : links.map((link) => (
-          <Link key={link.url} href={link.url}>
-            <a className="text-text-alt text-opacity-50 hover:text-opacity-100">
-              {link.name}
-            </a>
+          <Link
+            key={link.url}
+            href={link.url}
+            className="text-text-alt text-opacity-50 hover:text-opacity-100"
+          >
+            {link.name}
           </Link>
         ))}
   </div>
@@ -84,10 +86,8 @@ export const Footer: React.FC = () => {
         </svg>
 
         <Suspense fallback={null}>
-          <Link href="/spotify">
-            <a className="mr-1 font-medium text-text">
-              {isOnline ? "Now playing" : "Not playing"}
-            </a>
+          <Link href="/spotify" className="mr-1 font-medium text-text">
+            {isOnline ? "Now playing" : "Not playing"}
           </Link>
         </Suspense>
 

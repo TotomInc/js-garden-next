@@ -29,10 +29,11 @@ export const BlogPostHeader: React.FC<{
         ))}
       </p>
 
-      <Link href={`/blog/${slug}`}>
-        <a className="mt-1 font-sans text-3xl font-bold text-heading">
-          {title}
-        </a>
+      <Link
+        href={`/blog/${slug}`}
+        className="mt-1 font-sans text-3xl font-bold text-heading"
+      >
+        {title}
       </Link>
 
       <div className="mt-2 flex items-center justify-between">
