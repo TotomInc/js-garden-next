@@ -53,6 +53,7 @@ export const Footer: React.FC = () => {
   ];
 
   const projectsLinks = [
+    { url: "https://fastsheet.co", name: "fastsheet" },
     { url: "https://github.com/TotomInc/js-garden-next", name: "JS Garden" },
     {
       url: "https://github.com/TotomInc/eslint-config-react",
