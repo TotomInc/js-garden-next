@@ -53,7 +53,8 @@ export const Footer: React.FC = () => {
   ];
 
   const projectsLinks = [
-    { url: "https://fastsheet.co", name: "fastsheet" },
+    { url: "https://useform.co", name: "Useform" },
+    { url: "https://fastsheet.co", name: "Fastsheet" },
     { url: "https://github.com/TotomInc/js-garden-next", name: "JS Garden" },
     {
       url: "https://github.com/TotomInc/eslint-config-react",
@@ -108,11 +109,7 @@ export const Footer: React.FC = () => {
           links={socialLinks}
         />
 
-        <FooterCategory
-          name="GitHub Projects"
-          externalLinks
-          links={projectsLinks}
-        />
+        <FooterCategory name="Projects" externalLinks links={projectsLinks} />
       </div>
     </footer>
   );
