@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePlausible } from "next-plausible";
 import { ArrowLongRightIcon, XMarkIcon } from "@heroicons/react/20/solid";
 
 import { Logo } from "./Logo";
@@ -10,6 +11,8 @@ import { Logo } from "./Logo";
 const BANNER_NAME = "isUseformBannerVisible";
 
 export const Navbar: React.FC = () => {
+  const plausible = usePlausible();
+
   const [isBannerVisible, setIsBannerVisible] = useState(false);
 
   useEffect(() => {
@@ -23,6 +26,7 @@ export const Navbar: React.FC = () => {
   }, [setIsBannerVisible]);
 
   const handleHideBanner = () => {
+    plausible("hide-banner");
     setIsBannerVisible(false);
     window.localStorage.setItem(BANNER_NAME, "hidden");
   };
