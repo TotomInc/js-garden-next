@@ -7,7 +7,7 @@ import "../styles/fonts.css";
 import "../styles/syntax.css";
 import "../styles/scrollbar.css";
 
-const App = ({ Component, pageProps }: AppProps) => {
+export function App({ Component, pageProps }: AppProps) {
   return (
     <PlausibleProvider
       domain="jsgarden.co"
@@ -19,6 +19,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Analytics />
     </PlausibleProvider>
   );
-};
+}
 
 export default App;

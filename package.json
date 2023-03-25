@@ -26,7 +26,7 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
     "@tailwindcss/typography": "^0.5.9",
-    "@totominc/eslint-config-react": "^0.9.0",
+    "@totominc/eslint-config-next": "^0.1.2",
     "@types/node": "^18.15.9",
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",

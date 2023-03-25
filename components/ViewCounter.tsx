@@ -3,7 +3,7 @@ import useSWR from "swr";
 
 import { fetcher } from "../lib/fetcher";
 
-export const ViewCounter: React.FC<{ slug: string }> = ({ slug }) => {
+export function ViewCounter({ slug }: { slug: string }) {
   const { data } = useSWR<{ total: number }>(`/api/views/${slug}`, fetcher);
 
   const views = Number(data?.total);
@@ -19,4 +19,4 @@ export const ViewCounter: React.FC<{ slug: string }> = ({ slug }) => {
       views > 0 ? views.toLocaleString() : "–––"
     } views`}</span>
   );
-};
+}

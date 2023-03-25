@@ -36,7 +36,7 @@ SyntaxHighlighter.registerLanguage("json", json);
  *
  * From: https://amirardalan.com/blog/syntax-highlight-code-in-markdown
  */
-export const Markdown = ({ content }: { content: string }) => {
+export function Markdown({ content }: { content: string }) {
   const syntaxTheme = theme;
 
   const MarkdownComponents = {
@@ -81,4 +81,4 @@ export const Markdown = ({ content }: { content: string }) => {
   return (
     <ReactMarkdown components={MarkdownComponents}>{content}</ReactMarkdown>
   );
-};
+}

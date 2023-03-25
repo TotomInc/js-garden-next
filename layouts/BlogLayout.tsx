@@ -1,9 +1,7 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
-export const BlogLayout: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export function BlogLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
@@ -15,4 +13,4 @@ export const BlogLayout: React.FC<{ children: React.ReactNode }> = ({
       <Footer />
     </>
   );
-};
+}

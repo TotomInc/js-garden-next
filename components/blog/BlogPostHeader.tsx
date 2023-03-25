@@ -5,13 +5,19 @@ import useSwr from "swr";
 
 import { fetcher } from "../../lib/fetcher";
 
-export const BlogPostHeader: React.FC<{
+export function BlogPostHeader({
+  title,
+  date,
+  slug,
+  summary,
+  tags,
+}: {
   title: string;
   summary: string;
   date: string;
   slug: string;
   tags: string[];
-}> = ({ title, date, slug, summary, tags }) => {
+}) {
   const { data } = useSwr<{ total: number }>(`/api/views/${slug}`, fetcher);
 
   const views = data?.total;
@@ -51,4 +57,4 @@ export const BlogPostHeader: React.FC<{
       </p>
     </div>
   );
-};
+}

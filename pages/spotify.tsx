@@ -11,7 +11,7 @@ import { BlogLayout } from "../layouts/BlogLayout";
 import { SEO } from "../components/SEO";
 import { SpotifyTop } from "../components/spotify/SpotifyTop";
 
-const PostsPage = () => {
+function SpotifyPage() {
   const nowPlaying = useSwr<{ status: APINowPlayingResponse }>(
     "/api/spotify/now-playing",
     fetcher
@@ -120,6 +120,6 @@ const PostsPage = () => {
       </BlogLayout>
     </>
   );
-};
+}
 
-export default PostsPage;
+export default SpotifyPage;

@@ -10,7 +10,7 @@ import { Logo } from "./Logo";
 
 const BANNER_NAME = "isUseformBannerVisible";
 
-export const Navbar: React.FC = () => {
+export function Navbar() {
   const plausible = usePlausible();
 
   const [isBannerVisible, setIsBannerVisible] = useState(false);
@@ -89,4 +89,4 @@ export const Navbar: React.FC = () => {
       </header>
     </div>
   );
-};
+}

@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import { useState, useRef } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { posts } };
 };
 
-const PostsPage: NextPage<{ posts: Post[] }> = ({ posts }) => {
+export function PostsPage({ posts }: { posts: Post[] }) {
   const featuredTags = ["#react", "#vue", "#typescript", "#electron"];
 
   const inputEl = useRef<HTMLInputElement | null>(null);
@@ -113,6 +113,6 @@ const PostsPage: NextPage<{ posts: Post[] }> = ({ posts }) => {
       </BlogLayout>
     </>
   );
-};
+}
 
 export default PostsPage;

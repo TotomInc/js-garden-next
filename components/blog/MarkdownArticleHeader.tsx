@@ -3,12 +3,17 @@ import parseDate from "date-fns/parse";
 
 import { ViewCounter } from "../ViewCounter";
 
-export const MarkdownArticleHeader: React.FC<{
+export function MarkdownArticleHeader({
+  title,
+  date,
+  summary,
+  slug,
+}: {
   title: string;
   summary: string;
   date: string;
   slug: string;
-}> = ({ title, date, summary, slug }) => {
+}) {
   const formattedDate = formatDate(
     parseDate(date, "yyyy-MM-dd", new Date()),
     "MMMM d, yyyy"
@@ -31,4 +36,4 @@ export const MarkdownArticleHeader: React.FC<{
       <p className="mt-6 font-sans text-text-alt">{summary}</p>
     </div>
   );
-};
+}

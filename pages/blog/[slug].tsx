@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
+import type { GetStaticProps, GetStaticPaths } from "next";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 
@@ -35,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-const PostPage: NextPage<{ post: Post }> = ({ post }) => {
+export function PostPage({ post }: { post: Post }) {
   const router = useRouter();
 
   if (!router.isFallback && !post?.slug) {
@@ -58,6 +58,6 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
       </BlogLayout>
     </>
   );
-};
+}
 
 export default PostPage;

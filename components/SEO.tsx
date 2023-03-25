@@ -1,15 +1,15 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-export const SEO: React.FC<{
-  title?: string;
-  description?: string;
-  imageUrl?: string;
-}> = ({
+export function SEO({
   title = "JS Garden - Thomas Cazade",
   description = "A blog about modern front-end web development where I share my knowledge. Front-end engineer with a passion for Vue.js, React and modern technologies.",
   imageUrl = "https://blog.totominc.io/og-image.png",
-}) => {
+}: {
+  title?: string;
+  description?: string;
+  imageUrl?: string;
+}) {
   const router = useRouter();
 
   return (
@@ -33,4 +33,4 @@ export const SEO: React.FC<{
       <meta content="#262738" name="theme-color" />
     </Head>
   );
-};
+}

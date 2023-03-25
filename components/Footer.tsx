@@ -5,39 +5,45 @@ import useSwr from "swr";
 import type { APINowPlayingResponse } from "../interfaces/spotify.interfaces";
 import { fetcher } from "../lib/fetcher";
 
-const FooterCategory: React.FC<{
+function FooterCategory({
+  name,
+  externalLinks,
+  links,
+}: {
   name: string;
   externalLinks: boolean;
   links: { url: string; name: string }[];
-}> = ({ name, externalLinks, links }) => (
-  <div className="flex flex-col space-y-4 md:w-1/3">
-    <p className="font-mono text-sm tracking-tight text-text-alt">{name}</p>
+}) {
+  return (
+    <div className="flex flex-col space-y-4 md:w-1/3">
+      <p className="font-mono text-sm tracking-tight text-text-alt">{name}</p>
 
-    {externalLinks
-      ? links.map((link) => (
-          <a
-            key={link.url}
-            href={link.url}
-            target="_blank"
-            className="text-text-alt text-opacity-50 hover:text-opacity-100"
-            rel="noreferrer"
-          >
-            {link.name}
-          </a>
-        ))
-      : links.map((link) => (
-          <Link
-            key={link.url}
-            href={link.url}
-            className="text-text-alt text-opacity-50 hover:text-opacity-100"
-          >
-            {link.name}
-          </Link>
-        ))}
-  </div>
-);
+      {externalLinks
+        ? links.map((link) => (
+            <a
+              key={link.url}
+              href={link.url}
+              target="_blank"
+              className="text-text-alt text-opacity-50 hover:text-opacity-100"
+              rel="noreferrer"
+            >
+              {link.name}
+            </a>
+          ))
+        : links.map((link) => (
+            <Link
+              key={link.url}
+              href={link.url}
+              className="text-text-alt text-opacity-50 hover:text-opacity-100"
+            >
+              {link.name}
+            </Link>
+          ))}
+    </div>
+  );
+}
 
-export const Footer: React.FC = () => {
+export function Footer() {
   const localLinks = [
     { url: "/", name: "Home" },
     { url: "/spotify", name: "Spotify" },
@@ -113,4 +119,4 @@ export const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+}
