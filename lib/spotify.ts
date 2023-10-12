@@ -11,7 +11,7 @@ const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
 
 const authorizationToken = Buffer.from(`${clientId}:${clientSecret}`).toString(
-  "base64"
+  "base64",
 );
 
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;

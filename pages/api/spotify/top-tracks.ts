@@ -8,7 +8,7 @@ import { getTopTracks } from "../../../lib/spotify";
 
 export default async function topTracks(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const response = await getTopTracks();
   const { items } = (await response.json()) as SpotifyTopTracksResponse;
@@ -23,7 +23,7 @@ export default async function topTracks(
 
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=86400, stale-while-revalidate=43200"
+    "public, s-maxage=86400, stale-while-revalidate=43200",
   );
 
   return res.status(200).json({ tracks });

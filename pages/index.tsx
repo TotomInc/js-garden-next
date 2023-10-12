@@ -87,7 +87,7 @@ export function PostsPage({ posts }: { posts: Post[] }) {
             onChange={(e) => setSearchValue(e.target.value)}
           />
 
-          <MagnifyingGlassIcon className="absolute top-0 right-0 mr-4 mt-3 h-auto w-6 text-text" />
+          <MagnifyingGlassIcon className="absolute right-0 top-0 mr-4 mt-3 h-auto w-6 text-text" />
         </div>
 
         <h2 className="mb-8 font-assistant text-4xl font-extrabold tracking-tight text-white">

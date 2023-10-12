@@ -16,7 +16,7 @@ export function MarkdownArticleHeader({
 }) {
   const formattedDate = formatDate(
     parseDate(date, "yyyy-MM-dd", new Date()),
-    "MMMM d, yyyy"
+    "MMMM d, yyyy",
   );
 
   return (

@@ -32,7 +32,7 @@ export function Navbar() {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-10 w-full bg-background bg-opacity-80 backdrop-blur-md backdrop-filter">
+    <div className="fixed left-0 right-0 top-0 z-10 w-full bg-background bg-opacity-80 backdrop-blur-md backdrop-filter">
       {isBannerVisible ? (
         <div className="relative bg-code-background py-3">
           <div className="mx-auto flex max-w-3xl flex-col items-center justify-between space-y-2 px-6 sm:flex-row sm:space-y-0">
@@ -53,7 +53,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="absolute top-0 right-0 mt-12 mr-6 sm:mt-4"
+            className="absolute right-0 top-0 mr-6 mt-12 sm:mt-4"
             onClick={handleHideBanner}
           >
             <XMarkIcon

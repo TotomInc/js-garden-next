@@ -5,7 +5,7 @@ import prisma from "../../../lib/prisma";
 // eslint-disable-next-line consistent-return
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   try {
     // @ts-ignore

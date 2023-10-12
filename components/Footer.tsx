@@ -74,7 +74,7 @@ export function Footer() {
 
   const nowPlaying = useSwr<{ status: APINowPlayingResponse }>(
     "/api/spotify/now-playing",
-    fetcher
+    fetcher,
   );
 
   const isOnline =

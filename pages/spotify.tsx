@@ -14,7 +14,7 @@ import { SpotifyTop } from "../components/spotify/SpotifyTop";
 function SpotifyPage() {
   const nowPlaying = useSwr<{ status: APINowPlayingResponse }>(
     "/api/spotify/now-playing",
-    fetcher
+    fetcher,
   );
 
   const isOnline =
@@ -24,12 +24,12 @@ function SpotifyPage() {
 
   const tracks = useSwr<{ tracks: APITopTracksResponse[] }>(
     "/api/spotify/top-tracks",
-    fetcher
+    fetcher,
   );
 
   const artists = useSwr<{ artists: APITopArtistsResponse[] }>(
     "/api/spotify/top-artists",
-    fetcher
+    fetcher,
   );
 
   const fallback = <p className="text-text">Loading...</p>;
