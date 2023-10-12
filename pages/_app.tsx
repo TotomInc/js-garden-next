@@ -1,5 +1,4 @@
 import type { AppProps } from "next/app";
-import { Analytics } from "@vercel/analytics/react";
 import PlausibleProvider from "next-plausible";
 
 import "../styles/index.css";
@@ -16,7 +15,6 @@ export function App({ Component, pageProps }: AppProps) {
       selfHosted
     >
       <Component {...pageProps} />
-      <Analytics />
     </PlausibleProvider>
   );
 }
