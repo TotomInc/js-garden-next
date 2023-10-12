@@ -50,6 +50,7 @@ export function SpotifyTop({
         width={48}
         height={48}
         style={{ maxHeight: "48px" }}
+        unoptimized
       />
     </div>
   );

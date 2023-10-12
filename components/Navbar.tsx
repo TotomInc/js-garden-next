@@ -82,6 +82,7 @@ export function Navbar() {
                 alt="Spotify"
                 width={24}
                 height={24}
+                unoptimized
               />
             </Link>
           </div>

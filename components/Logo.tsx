@@ -3,7 +3,7 @@ import Image from "next/image";
 export function Logo() {
   return (
     <>
-      <Image src="/images/logo.svg" alt="" width={32} height={32} />
+      <Image src="/images/logo.svg" alt="" width={32} height={32} unoptimized />
 
       <div className="ml-2 flex flex-col">
         <p className="font-assistant text-lg font-extrabold leading-[0.75] tracking-tight text-heading">
