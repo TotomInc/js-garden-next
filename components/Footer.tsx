@@ -60,12 +60,7 @@ export function Footer() {
 
   const projectsLinks = [
     { url: "https://useform.co", name: "Useform" },
-    { url: "https://fastsheet.co", name: "Fastsheet" },
     { url: "https://github.com/TotomInc/js-garden-next", name: "JS Garden" },
-    {
-      url: "https://github.com/TotomInc/eslint-config-react",
-      name: "React ESLint Config",
-    },
     {
       url: "https://github.com/deniseaudio",
       name: "Synology Audio-Server (DSM)",
