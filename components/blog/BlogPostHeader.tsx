@@ -18,10 +18,6 @@ export function BlogPostHeader({
   slug: string;
   tags: string[];
 }) {
-  const { data } = useSwr<{ total: number }>(`/api/views/${slug}`, fetcher);
-
-  const views = data?.total;
-
   const formattedDate = formatDate(
     parseDate(date, "yyyy-MM-dd", new Date()),
     "MMMM d, yyyy",
@@ -42,15 +38,9 @@ export function BlogPostHeader({
         {title}
       </Link>
 
-      <div className="mt-2 flex items-center justify-between">
-        <p className="font-mono text-xs text-text-alt text-opacity-50">
-          Published {formattedDate}
-        </p>
-
-        <p className="font-mono text-xs text-text-alt text-opacity-50">{`${
-          views ? Number(views).toLocaleString() : "–––"
-        } views`}</p>
-      </div>
+      <p className="flex mt-2 font-mono text-xs text-text-alt text-opacity-50">
+        Published {formattedDate}
+      </p>
 
       <p className="mt-4 font-sans text-base font-normal text-text-alt">
         {summary}

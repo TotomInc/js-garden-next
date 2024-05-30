@@ -3,7 +3,7 @@ import Head from "next/head";
 
 export function SEO({
   title = "JS Garden - Thomas Cazade",
-  description = "A blog about modern front-end web development where I share my knowledge. Front-end engineer with a passion for Vue.js, React and modern technologies.",
+  description = "A blog about modern front-end web development where I share my knowledge. Front-end engineer with a passion for Vue.js, React and Next.js.",
   imageUrl = "https://jsgarden.co/og-image.png",
 }: {
   title?: string;

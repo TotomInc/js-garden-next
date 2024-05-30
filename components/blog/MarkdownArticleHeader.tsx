@@ -1,8 +1,6 @@
 import formatDate from "date-fns/format";
 import parseDate from "date-fns/parse";
 
-import { ViewCounter } from "../ViewCounter";
-
 export function MarkdownArticleHeader({
   title,
   date,
@@ -25,13 +23,9 @@ export function MarkdownArticleHeader({
         {title}
       </h1>
 
-      <div className="mt-4 flex items-center justify-between">
-        <p className="font-mono text-sm text-text-alt text-opacity-50">
-          Thomas Cazade / {formattedDate}
-        </p>
-
-        <ViewCounter slug={slug} />
-      </div>
+      <p className="mt-4 flex font-mono text-sm text-text-alt text-opacity-50">
+        Thomas Cazade / {formattedDate}
+      </p>
 
       <p className="mt-6 font-sans text-text-alt">{summary}</p>
     </div>

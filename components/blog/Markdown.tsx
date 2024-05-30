@@ -1,8 +1,3 @@
-/*
-  eslint
-    react/no-unstable-nested-components: "off",
-    @typescript-eslint/no-shadow: "off"
-*/
 import ReactMarkdown from "react-markdown";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import rangeParser from "parse-numeric-range";

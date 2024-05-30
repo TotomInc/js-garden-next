@@ -37,7 +37,6 @@ const getAccessToken = async () => {
     }),
   });
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const { access_token, refresh_token } =
     await (response.json() as Promise<SpotifyTokenResponse>);
 
